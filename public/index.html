@@ -5,15 +5,20 @@
     <meta charset="utf8" />
     <link
       rel="icon"
-      href="https://cdn.sstatic.net/Sites/stackoverflow/Img/favicon.ico"
+      href="https://uvu.edu/favicon.ico"
       />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div>
+      <img src="./UVUMonogramWhite-0007.png" alt="UVU" id="Logo"/>
+    </div>
+    
+    <div>
       <Button onclick="DarkMode()" id="DM">Dark Mode</Button>
     </div>
     <form id="form1">
+    <div>
     <div id="upperHalf"> 
     <select
       aria-label="Select Course"
@@ -56,6 +61,7 @@
       <!-- TODO: Button should AJAX PUT the textarea value to json-server which will store it -->
     </div>
     </form>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="script.js"></script>
   </body>
   <!-- TODO: add appropriate comments you feel are necessary, if any, for the next coder to understand -->

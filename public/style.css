@@ -1,59 +1,53 @@
 /* TODO: make it look awesome. */
 /* TODO: make it responsive. */
+
+.dark-mode {
+  background-color: black;
+  color: white;
+ 
+}
+
+.img-change{
+  background-image: url("./UVUMonogramWhite-0007.png")
+
+}
+
+#DM{
+  width: fit-content;
+  height: fit-content;
+  display: block;
+  color: #fff;
+  background: #0e1e10;
+  font-size: 1em;
+  font-weight: bold;
+  
+  
+}
+
 body{
-    margin: 0;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      font-family: 'Jost', sans-serif;
-      background-color: rgb(36, 93, 56)
+
+  margin: 0;
+  padding: 0;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Jost', sans-serif;
+  background-color: rgb(36, 93, 56)
      
 }
 
-
-textarea {
-    width: 24em;
-  height: 3em;
-}
-
-button{
-    width: 60%;
-      height: 40px;
-      margin: 10px auto;
-      justify-content: center;
-      display: block;
-      color: #fff;
-      background: #0e1e10;
-      font-size: 1em;
-      font-weight: bold;
-      margin-top: 20px;
-      outline: none;
-      border: none;
-      border-radius: 5px;
-      transition: .2s ease-in;
-      cursor: pointer;
-}
-
 select {
-    margin: 10px 120px;
-    outline: 0;
-    font: Arial ;
-    width: 20em;
-    height: 3em;
-    padding: 0 4em 0 1em;
-    color: black;
-    border-radius: 0.25em;
-    box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.2);
-    cursor: pointer;
-}
-
-textarea {
-  width: 60%;
   margin: 10px 120px;
-}
-
-label{
-  margin: 10px 120px;
+  outline: 0;
+  font: Arial ;
+  width: 20em;
+  height: 3em;
+  padding: 0 4em 0 1em;
+  color: black;
+  border-radius: 0.25em;
+  box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.2);
+  cursor: pointer;
 }
 
 input{
@@ -65,9 +59,36 @@ input{
 }
 h3{
   margin: 10px 120px;
+} 
+
+label{
+  margin: 20px 120px;
+  
 }
-.dark-mode {
-  background-color: black;
-  color: white;
- 
+
+textarea {
+  width: 60%;
+  margin: 10px 120px;
+  height: 3em;
 }
+
+
+#button{
+
+width: fit-content;
+height: 40px;
+margin: 10px auto;
+justify-content: center;
+display: block;
+color: #fff;
+background: #0e1e10;
+font-size: 1em;
+font-weight: bold;
+margin-top: 20px;
+outline: none;
+border: none;
+border-radius: 5px;
+transition: .2s ease-in;
+cursor: pointer;
+}
+

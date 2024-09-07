@@ -1,11 +1,9 @@
 // AJAX to replace them with dynamic data from GET https://json-server-ft3qa5--3000.local.webcontainer.io/api/v1/courses 
-//https://jsonservernblldr-ufml--3000--f7aa08df.local-credentialless.webcontainer.io/api/v1/courses
-//http://localhost:3000/courses'
+
 fetch('../courses')
   .then(res => res.json())
   .then(data => {
     for (const options in data){
-      console.log(data)
       var selection = document.getElementById("course");
       
       let option = document.createElement("option");
@@ -26,6 +24,8 @@ selectElement.addEventListener("change", (event) => {
   uvu.style.display = event.target.value === ""? "none" : "block";
 })
 
+
+
 //replace them with dynamic data by ajaxing GET https://json-server-ft3qa5--3000.local.webcontainer.io/logs?courseId=<courseID>&uvuId=<uvuID>
 
 document.getElementById('uvuId').addEventListener('input', handleOnChange);
@@ -42,7 +42,7 @@ function handleOnChange() {
       listContainer.removeChild(child);
       child = listContainer.lastElementChild;
     }
-    fetch(//https://jsonserverbezxrx-sfe1--3000--33975f1d.local-credentialless.webcontainer.io/api/v1/logs
+    fetch(
       '../logs'
     )
       .then((response) => {
@@ -146,15 +146,32 @@ function disableButton() {
   } 
 }
 
-const DarkMode = ()=>{
+document.getElementById("DM").addEventListener("button", DarkMode);
+
+function DarkMode() {   
   let element = document.body;
-   element.classList.toggle("dark-mode");
+  let img = document.getElementById("Logo");
+  img.src = "./UVUMonogramWhite-0007.png";
+  element.classList.toggle("dark-mode");
+
+  var theme;
+
+  if( element.classList.contains("dark-mode")){
+    console.log("Dark mode");
+    theme ="Dark";
+  }else{
+    console.log("Light mode");
+    theme = "Light"
+  }
+  //save to localStorage
+  localStorage.setItem("PageTheme", JSON.stringify(theme));
+  //ensure you convert to JSON like 
 }
 
+let GetTheme = JSON.parse(localStorage.getItem("PageTheme"));
+console.log(GetTheme)
 
-
-
-
-
-
-
+if(GetTheme === "Dark") {
+  document.body.classList ="dark-mode";
+  
+}
