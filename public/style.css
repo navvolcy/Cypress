@@ -13,6 +13,7 @@ body{
      
 }
 
+
 textarea {
     width: 24em;
   height: 3em;
@@ -38,30 +39,15 @@ button{
 
 select {
     margin: 10px 120px;
-    border: 0;
     outline: 0;
-    font: inherit;
+    font: Arial ;
     width: 20em;
     height: 3em;
     padding: 0 4em 0 1em;
-    background: var(--arrow-icon) no-repeat right 0.8em center / 1.4em,
-      linear-gradient(to left, var(--arrow-bg) 3em, var(--select-bg) 3em);
     color: black;
     border-radius: 0.25em;
     box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.2);
     cursor: pointer;
-    &::-ms-expand {
-      display: none;
-    }
-    &:focus {
-      outline: none;
-    }
-    option {
-      color: black;
-      background-color: black;
-    }
-  
-  
 }
 
 textarea {
@@ -82,4 +68,9 @@ input{
 }
 h3{
   margin: 10px 120px;
+}
+.dark-mode {
+  background-color: black;
+  color: white;
+ 
 }

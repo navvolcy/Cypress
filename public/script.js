@@ -146,6 +146,11 @@ function disableButton() {
   } 
 }
 
+const DarkMode = ()=>{
+  let element = document.body;
+   element.classList.toggle("dark-mode");
+}
+
 
 
 
