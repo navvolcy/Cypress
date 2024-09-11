@@ -1,14 +1,16 @@
 /* TODO: make it look awesome. */
 /* TODO: make it responsive. */
 body{
-    margin: 0;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      /* align-items: center; */
-      /* min-height: 100vh; */
-      font-family: 'Jost', sans-serif;
-      background: linear-gradient(to bottom, #275D38,  #275D38,  #275D38);
+
+  margin: 0;
+  padding: 0;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Jost', sans-serif;
+  background-color: rgb(36, 93, 56)
+     
 }
 
 textarea {
