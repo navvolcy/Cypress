@@ -1,20 +1,26 @@
 // AJAX to replace them with dynamic data from GET https://json-server-ft3qa5--3000.local.webcontainer.io/api/v1/courses 
 
-fetch('../courses')
-  .then(res => res.json())
+
+
+//const axios = require('axios')
+
+axios.get('../courses')
+// fetch('../courses')
+  //.then(res => res.json())
   .then(data => {
-    for (const options in data){
+    data.data.forEach(options => {
+      
       var selection = document.getElementById("course");
       
       let option = document.createElement("option");
       
-      option.setAttribute('value', data[options].id);
+      option.setAttribute('value', options.id);
 
-      let optionText = document.createTextNode(data[options].display);
+      let optionText = document.createTextNode(options.display);
       
       option.appendChild(optionText);
       selection.appendChild(option);
-    }
+    })
   })
 
 //If course ever becomes unselected, don't show the uvu id text input box
@@ -42,18 +48,13 @@ function handleOnChange() {
       listContainer.removeChild(child);
       child = listContainer.lastElementChild;
     }
-    fetch(
-      '../logs'
-    )
-      .then((response) => {
-        return response.json();
-      })
-      .then((data) => {
-        for (const student in data) {
-          if (str === data[student].uvuId) {
+    axios.get('../logs')
+      .then(data => {
+        data.data.forEach ( student => {
+          if (str === student.uvuId) {
            
             var mainContainer = document.getElementById('uvuIdDisplay');
-            mainContainer.innerHTML = 'Student Logs for ' + data[student].uvuId;
+            mainContainer.innerHTML = 'Student Logs for ' + student.uvuId;
             // creating html tags
             var listContainer = document.getElementById('unOrdered');
 
@@ -75,16 +76,16 @@ function handleOnChange() {
               .appendChild(pTag);
             //date info displayed 
             //text info displayed
-            studentInfo.innerHTML = data[student].date;
-            studentText.innerHTML = data[student].text;
-            console.log('reached then()', data[student].date);
-            console.log('dates reached ', data[student].text);
+            studentInfo.innerHTML = student.date;
+            studentText.innerHTML = student.text;
+            console.log('reached then()', student.date);
+            console.log('dates reached ', student.text);
           }        
-        }
+        })
       })
       .catch((err) => {
         console.log('error1 ', err);
-      });
+      })
   }
 }
 
@@ -148,6 +149,9 @@ function disableButton() {
 
 document.getElementById("DM").addEventListener("button", DarkMode);
 
+
+
+
 function DarkMode() {   
   let element = document.body;
   let img = document.getElementById("Logo");
@@ -159,9 +163,11 @@ function DarkMode() {
   if( element.classList.contains("dark-mode")){
     console.log("Dark mode");
     theme ="Dark";
+    document.getElementById("DM").innerHTML ="Light Mode";
   }else{
     console.log("Light mode");
     theme = "Light"
+    document.getElementById("DM").innerHTML ="Dark Mode";
   }
   //save to localStorage
   localStorage.setItem("PageTheme", JSON.stringify(theme));
@@ -173,5 +179,5 @@ console.log(GetTheme)
 
 if(GetTheme === "Dark") {
   document.body.classList ="dark-mode";
-  
+  document.getElementById('DM').innerHTML = "Light mode"
 }

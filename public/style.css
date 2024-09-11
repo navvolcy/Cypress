@@ -6,6 +6,10 @@
   color: white;
  
 }
+.light-mode{
+  background-color: rgb(36, 93, 56) ;
+  color: black;
+}
 
 .img-change{
   background-image: url("./UVUMonogramWhite-0007.png")
